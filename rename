@@ -1,0 +1,13 @@
+# This script iterates through all files in a folder, and renames 
+# jpg and jpeg files to a random alphanumeric string of 13 characters.
+# TO_DO take into account collision handling.
+
+for f in *.jpg;
+do a=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '');
+mv $f $a.jpg;
+done;
+
+for f in *.jpeg;
+do a=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '');
+mv $f $a.jpeg;
+done;
